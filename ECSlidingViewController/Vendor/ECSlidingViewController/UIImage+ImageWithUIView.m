@@ -11,10 +11,15 @@
 + (UIImage *)imageWithUIView:(UIView *)view
 {
   CGSize screenShotSize = view.bounds.size;
-  UIImage *img;  
+  UIImage *img = nil;
   UIGraphicsBeginImageContext(screenShotSize);
   CGContextRef ctx = UIGraphicsGetCurrentContext();
-  [view drawLayer:view.layer inContext:ctx];
+  if ([view isKindOfClass: [UIScrollView class]]) {
+    UIScrollView *scrollView = (UIScrollView *)view;
+    CGContextTranslateCTM(ctx, -scrollView.contentOffset.x, -scrollView.contentOffset.y);
+  }
+
+  [view.layer renderInContext: ctx];
   img = UIGraphicsGetImageFromCurrentImageContext();
   UIGraphicsEndImageContext();
   
