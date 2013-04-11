@@ -12,7 +12,7 @@
 {
   CGSize screenShotSize = view.bounds.size;
   UIImage *img = nil;
-  UIGraphicsBeginImageContext(screenShotSize);
+  UIGraphicsBeginImageContextWithOptions(screenShotSize, YES, [UIScreen mainScreen].scale);
   CGContextRef ctx = UIGraphicsGetCurrentContext();
   if ([view isKindOfClass: [UIScrollView class]]) {
     UIScrollView *scrollView = (UIScrollView *)view;
