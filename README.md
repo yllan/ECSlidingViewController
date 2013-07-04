@@ -37,7 +37,7 @@ You'll need these four files:
 
 OR - you can use [CocoaPods](http://cocoapods.org/). Add the following line to your Podspec:
 
-    pod 'ECSlidingViewController', '~> 0.9.0'
+    pod 'ECSlidingViewController', '~> 0.10.0'
 
 ### Setup storyboards and set the topViewController
 
@@ -105,7 +105,7 @@ Below is an example of the anchorRightRevealAmount set:
 	}
 
 ## MIT License
-Copyright (C) 2012 EdgeCase
+Copyright (C) 2013 EdgeCase
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
